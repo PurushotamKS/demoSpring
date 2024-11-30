@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+
+<beans>
+    <bean class="com.firstSpring.demoSpring.ComputerEngineer" id="compEng">
+        <property name="name" value="Purush"/>
+        <property name="amount" value="5000.00"/>
+        <property name="skills" value="Java,Python"/>
+<!--        <property name="address" ref="address"/>-->
+        <property name="addresses">
+            <list>
+                <ref bean="address"/>
+                <ref bean="secAddr"/>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean class="com.firstSpring.demoSpring.Address" id="address">
+        <property name="district" value="Bangalore"/>
+        <property name="pin" value="560068"/>
+    </bean>
+    <bean class="com.firstSpring.demoSpring.Address" id="secAddr">
+        <property name="district" value="Maharashtra"/>
+        <property name="pin" value="560042"/>
+    </bean>
+</beans>
